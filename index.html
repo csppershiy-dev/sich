@@ -88,6 +88,19 @@ p{margin:0 0 12px;max-width:66ch}
 .steps li::before{content:counter(n);display:block;font-weight:800;font-size:26px;color:var(--gold);margin-bottom:4px}
 footer{border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
 @media(max-width:600px){.swatches{grid-template-columns:repeat(2,minmax(0,1fr))}.sw{height:76px}.dhead{grid-template-columns:minmax(0,1fr)}.dhead .sw{height:110px;order:-1}.row{grid-template-columns:minmax(0,1fr)}.row b{grid-row:auto;grid-column:1;text-align:left}}
+.brand{display:flex;align-items:center;gap:28px}
+.coin{width:150px;height:150px;flex:none;perspective:900px}
+.coin-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;animation:coin 9s cubic-bezier(.6,0,.3,1) infinite}
+.coin .face{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;filter:drop-shadow(0 0 1px rgba(201,149,46,.95)) drop-shadow(0 10px 22px rgba(0,0,0,.45))}
+.coin .back{transform:rotateY(180deg)}
+@keyframes coin{0%,62%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
+@media(prefers-reduced-motion:reduce){.coin-in{animation:none}}
+@media(max-width:600px){.brand{gap:16px}.coin{width:96px;height:96px}}
+.palette{display:grid;gap:18px;margin:0 0 14px}
+.fam h4{margin:0 0 8px;font-size:15px;font-weight:700}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.chip{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:8px 10px;font-size:14px;font-weight:600}
+.chip i{width:34px;height:34px;flex:none;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,0) 45%,rgba(0,0,0,.28)),var(--c);box-shadow:inset 0 0 0 1px rgba(127,127,127,.35)}
 </style>
 </head>
 <body>
@@ -95,8 +108,13 @@ footer{border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
 <!-- ГОЛОВНА -->
 <div class="view" id="v-home">
   <header class="band hero"><div class="wrap">
-    <h1>Майстерня «Січ»</h1>
-    <p class="lead">Покриття, робота по металу та тюнінг зброї.</p>
+    <div class="brand">
+      <div class="coin" role="img" aria-label="Логотип: Збройова майстерня «Січ»">
+        <div class="coin-in"><img class="face" src="img/logo.webp" alt="" width="480" height="480"><img class="face back" src="img/logo.webp" alt="" width="480" height="480"></div>
+      </div>
+      <div><h1>Майстерня «Січ»</h1>
+      <p class="lead">Покриття, робота по металу та тюнінг зброї.</p></div>
+    </div>
     <div class="swatches" aria-hidden="true">
       <div class="sw m-gold"><span>Золото 24K</span></div>
       <div class="sw m-oxide"><span>Оксидування</span></div>
@@ -167,6 +185,16 @@ footer{border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
   <div class="dhead"><div><h1>Cerakote</h1><p>Тонке полімер-керамічне покриття. Стійке до зносу, подряпин, хімії та корозії. Великий вибір кольорів — від класичних тактичних до яскравих, можливі камуфляжні схеми.</p></div><div class="sw m-cera"></div></div>
   <p class="lbl">У вартість входить</p>
   <ol class="stages"><li>Розбирання</li><li>Підготовка металу під фарбування</li><li>Фарбування</li><li>Збирання</li></ol>
+  <p class="lbl">Популярні кольори Cerakote</p>
+  <div class="palette">
+    <div class="fam"><h4>Чорний і графіт</h4><div class="chips"><div class="chip"><i style="--c:#3b3c3e"></i><span>Graphite Black</span></div><div class="chip"><i style="--c:#1d1e20"></i><span>Armor Black</span></div><div class="chip"><i style="--c:#5e6062"></i><span>Tungsten</span></div></div></div>
+    <div class="fam"><h4>Сірі</h4><div class="chips"><div class="chip"><i style="--c:#72767a"></i><span>Sniper Grey</span></div><div class="chip"><i style="--c:#8d8f8b"></i><span>Tactical Grey</span></div><div class="chip"><i style="--c:#e9e9e6"></i><span>Stormtrooper White</span></div></div></div>
+    <div class="fam"><h4>Оливкові</h4><div class="chips"><div class="chip"><i style="--c:#4d5333"></i><span>O.D. Green</span></div><div class="chip"><i style="--c:#5b5c3d"></i><span>Mil Spec O.D. Green</span></div><div class="chip"><i style="--c:#6b6a44"></i><span>Olive Drab</span></div></div></div>
+    <div class="fam"><h4>Зелені</h4><div class="chips"><div class="chip"><i style="--c:#5d6a4e"></i><span>Sniper Green</span></div><div class="chip"><i style="--c:#6c704b"></i><span>Bazooka Green</span></div><div class="chip"><i style="--c:#79b843"></i><span>Zombie Green</span></div></div></div>
+    <div class="fam"><h4>Сині</h4><div class="chips"><div class="chip"><i style="--c:#283752"></i><span>Navy Blue</span></div><div class="chip"><i style="--c:#2e4a7b"></i><span>NRA Blue</span></div><div class="chip"><i style="--c:#566f85"></i><span>Blue Titanium</span></div></div></div>
+    <div class="fam"><h4>Земляні</h4><div class="chips"><div class="chip"><i style="--c:#8b7457"></i><span>Flat Dark Earth</span></div><div class="chip"><i style="--c:#a3855f"></i><span>Coyote Tan</span></div><div class="chip"><i style="--c:#6d5940"></i><span>Burnt Bronze</span></div></div></div>
+  </div>
+  <p class="note">Кольори на екрані орієнтовні. Палітра Cerakote значно ширша — підберемо будь-який відтінок з каталогу та покажемо зразок.</p>
   <div class="cards">
     <article class="card"><h3>Однотонне покриття</h3><p>Один колір на деталь або весь комплект.</p><div class="meta"><span>Ціна<b>від 6 000 ₴</b></span></div></article>
     <article class="card"><h3>Камуфляж і схеми</h3><p>Кілька кольорів, малюнок за вашим вибором.</p><div class="meta"><span>Ціна<b>за запитом</b></span></div></article>
