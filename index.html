@@ -163,6 +163,20 @@ html{scroll-padding-top:76px}
 .tn-links a{flex:none}
 .tn-s{display:none}
 @media(max-width:640px){.tn-l{display:none}.tn-s{display:inline}.tn-in{gap:8px}}
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media(max-width:860px){.cats{grid-template-columns:1fr}}
+.cat{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color .2s,transform .2s}
+.cat:hover,.cat:focus-visible{border-color:var(--gold);transform:translateY(-3px);outline:none}
+.cimg{height:clamp(150px,22vw,240px)}
+.cbody{padding:20px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cbody h2{margin:0;font-size:clamp(24px,2.6vw,30px)}
+.cbody p{margin:0;color:var(--mute)}
+.cgo{margin-top:auto;padding-top:12px;color:var(--gold);font-weight:700}
+@media(max-width:860px){.cimg{height:140px}}
+@media(prefers-reduced-motion:reduce){.cat{transition:none}.cat:hover{transform:none}}
+.m-coat{background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,0) 40%,rgba(0,0,0,.25)),linear-gradient(115deg,#f1cf6b 0 16%,#c9952e 16% 30%,#12151b 30% 46%,#37393b 46% 58%,#4c5232 58% 70%,#a2855f 70% 82%,#2d4a7c 82%)}
+.m-metal{background:#1a1a1c url("img/hand.jpg") center/cover no-repeat}
+#v-order .back{margin-bottom:22px;background:var(--bg)}
 </style>
 </head>
 <body>
@@ -170,9 +184,9 @@ html{scroll-padding-top:76px}
   <div class="tn-in">
     <a class="tn-brand" href="#home"><img src="img/logo.webp" alt="" width="32" height="32"><span>Січ</span></a>
     <div class="tn-links">
-      <a href="#coatings"><i>1</i>Покриття</a>
-      <a href="#metal"><i>2</i>Робота по металу</a>
-      <a href="#tuning-s"><i>3</i>Тюнінг</a>
+      <a href="#coatings">Покриття</a>
+      <a href="#metal">Робота по металу</a>
+      <a href="#tuning">Тюнінг</a>
     </div>
     <a class="tn-order" href="#order"><span class="tn-l">Оформити замовлення</span><span class="tn-s">Замовити</span></a>
   </div>
@@ -186,40 +200,53 @@ html{scroll-padding-top:76px}
         <div class="coin-in"><img class="face" src="img/logo.webp" alt="" width="480" height="480"><img class="face back" src="img/logo.webp" alt="" width="480" height="480"></div>
       </div>
       <div><h1>Майстерня «Січ»</h1>
-      <p class="lead">Покриття, робота по металу та тюнінг зброї.</p><a class="cbtn" href="#order">Оформити замовлення</a></div>
+      <p class="lead">Покриття, робота по металу та тюнінг зброї. Оберіть, що вас цікавить.</p></div>
     </div>
   </div></header>
 
   <section class="band"><div class="wrap">
-    <div class="group" id="coatings">
-      <p class="eyebrow">Крок 1</p><h2>Покриття</h2>
-      <p>Оберіть покриття, щоб побачити деталі та ціни.</p>
-      <div class="tiles">
+    <div class="cats">
+      <a class="cat" href="#coatings"><div class="cimg m-coat"></div><div class="cbody"><h2>Покриття</h2><p>Оксидування, Cerakote, золочення 24K</p><span class="cgo">Обрати покриття →</span></div></a>
+      <a class="cat" href="#metal"><div class="cimg m-metal"></div><div class="cbody"><h2>Робота по металу</h2><p>Лазерне та ручне гравіювання</p><span class="cgo">Дивитися роботи →</span></div></a>
+      <a class="cat" href="#tuning"><div class="cimg m-tune"></div><div class="cbody"><h2>Тюнінг</h2><p>Підбір, наявність та встановлення</p><span class="cgo">Детальніше →</span></div></a>
+    </div>
+  </div></section>
+</div>
+
+<!-- КАТЕГОРІЯ: ПОКРИТТЯ -->
+<section class="view band" id="v-coatings"><div class="wrap">
+  <a class="back" href="#home">← На головну</a>
+  <h1>Покриття</h1>
+  <p class="lead">Відновлюємо та змінюємо покриття зброї. Оберіть вид покриття, щоб побачити деталі та ціни.</p>
+  <div style="margin-top:26px">
+  <div class="tiles">
         <a class="tile" href="#oxide"><div class="img m-oxide"></div><div class="body"><h3>Оксидування</h3><p>Гаряче воронування: глянцеве, сатинове, матове</p><div class="go"><b>від 6 000 ₴</b><span>Детальніше →</span></div></div></a>
         <a class="tile" href="#cerakote"><div class="img m-cera"></div><div class="body"><h3>Cerakote</h3><p>Полімер-керамічне покриття, будь-який колір, дрібні деталі</p><div class="go"><b>від 6 000 ₴</b><span>Детальніше →</span></div></div></a>
         <a class="tile" href="#gold"><div class="img m-gold"></div><div class="body"><h3>Золочення 24K</h3><p>Гальванічне золото з дзеркальною поліровкою</p><div class="go"><b>від 7 000 ₴</b><span>Детальніше →</span></div></div></a>
       </div>
-    </div>
-    <div class="group" id="metal">
-      <p class="eyebrow">Крок 2</p><h2>Робота по металу</h2>
-      <p>Гравіювання за дизайнами майстерні або вашим ескізом.</p>
-      <div class="tiles">
+  </div>
+  <div class="cta"><p>Не знаєте, що обрати? Опишіть задачу — порадимо.</p><a href="#order">Оформити замовлення</a></div>
+</div></section>
+
+<!-- КАТЕГОРІЯ: РОБОТА ПО МЕТАЛУ -->
+<section class="view band" id="v-metal"><div class="wrap">
+  <a class="back" href="#home">← На головну</a>
+  <h1>Робота по металу</h1>
+  <p class="lead">Гравіювання за дизайнами майстерні або вашим ескізом.</p>
+  <div style="margin-top:26px">
+  <div class="tiles">
         <a class="tile" href="#laser"><div class="img m-laser"></div><div class="body"><h3>Лазерне гравіювання</h3><p>Точний малюнок будь-якої складності</p><div class="go"><b>від 300 ₴/см²</b><span>Детальніше →</span></div></div></a>
         <a class="tile" href="#hand"><div class="img m-hand"></div><div class="body"><h3>Ручне гравіювання</h3><p>Класична робота штихелем</p><div class="go"><b>від 600 ₴/см²</b><span>Детальніше →</span></div></div></a>
       </div>
-    </div>
-    <div class="group" id="tuning-s">
-      <p class="eyebrow">Крок 3</p><h2>Тюнінг</h2>
-      <p>Підбір, наявність та встановлення.</p>
-      <div class="tiles">
-        <a class="tile" href="#tuning"><div class="img m-tune"></div><div class="body"><h3>Тюнінг зброї</h3><p>Підберемо на ринку, є в наявності, встановимо</p><div class="go"><b>за запитом</b><span>Детальніше →</span></div></div></a>
-      </div>
-    </div>
-  </div></section>
+  </div>
+  <div class="cta"><p>Надішліть фото зброї та ідею — підготуємо ескіз.</p><a href="#order">Оформити замовлення</a></div>
+</div></section>
 
+<!-- ОФОРМЛЕННЯ ЗАМОВЛЕННЯ -->
+<section class="view" id="v-order">
   <section class="band alt" id="order"><div class="wrap">
-    <p class="eyebrow">Крок 4</p>
-    <h2>Оформити замовлення</h2>
+    <a class="back" href="#home">← На головну</a>
+    <h1>Оформити замовлення</h1>
     <p class="sub">Заповніть заявку — майстер зв'яжеться, уточнить деталі та назве точну ціну й термін.</p>
     <div class="order-grid">
       <form class="oform" id="oform" novalidate>
@@ -253,11 +280,11 @@ html{scroll-padding-top:76px}
       <button class="obtn" type="button" id="ocopy">Скопіювати заявку</button>
     </div>
   </div></section>
-</div>
+</section>
 
 <!-- ОКСИДУВАННЯ -->
 <section class="view band" id="v-oxide"><div class="wrap">
-  <a class="back" href="#home">← Усі послуги</a>
+  <a class="back" href="#coatings">← Покриття</a>
   <div class="dhead"><div><h1>Оксидування</h1><p>Гаряче оксидування (воронування) дає сталі глибокий чорний колір і захищає її від корозії. Обирайте фінішну фактуру — від дзеркального блиску до матової.</p></div><div class="sw m-oxide"></div></div>
   <p class="lbl">У вартість входить</p>
   <ol class="stages"><li>Розбирання</li><li>Чистка</li><li>Обробка металу</li><li>Знежирення</li><li>Оксидування</li><li>Повторна чистка</li><li>Збирання</li></ol>
@@ -271,7 +298,7 @@ html{scroll-padding-top:76px}
 
 <!-- CERAKOTE -->
 <section class="view band" id="v-cerakote"><div class="wrap">
-  <a class="back" href="#home">← Усі послуги</a>
+  <a class="back" href="#coatings">← Покриття</a>
   <div class="dhead"><div><h1>Cerakote</h1><p>Тонке полімер-керамічне покриття. Стійке до зносу, подряпин, хімії та корозії. Великий вибір кольорів — від класичних тактичних до яскравих, можливі камуфляжні схеми.</p></div><div class="sw m-cera"></div></div>
   <p class="lbl">У вартість входить</p>
   <ol class="stages"><li>Розбирання</li><li>Підготовка металу під фарбування</li><li>Фарбування</li><li>Збирання</li></ol>
@@ -301,7 +328,7 @@ html{scroll-padding-top:76px}
 
 <!-- ЗОЛОЧЕННЯ -->
 <section class="view band" id="v-gold"><div class="wrap">
-  <a class="back" href="#home">← Усі послуги</a>
+  <a class="back" href="#coatings">← Покриття</a>
   <div class="dhead"><div><h1>Золочення 24K</h1><p>Гальванічне золото на нікелевому підшарі після ручної поліровки до дзеркала. Варіант обираємо під те, як ви носите зброю.</p></div><div class="sw m-gold"></div></div>
   <p class="lbl">Етапи роботи</p>
   <ol class="stages"><li>Розбирання</li><li>Шліфування</li><li>Полірування до дзеркала</li><li>Підготовка поверхні</li><li>Нікель і золото 24K</li><li>Збирання та перевірка</li></ol>
@@ -317,7 +344,7 @@ html{scroll-padding-top:76px}
 
 <!-- ЛАЗЕРНЕ -->
 <section class="view band" id="v-laser"><div class="wrap">
-  <a class="back" href="#home">← Усі послуги</a>
+  <a class="back" href="#metal">← Робота по металу</a>
   <div class="dhead"><div><h1>Лазерне гравіювання</h1><p>Точний малюнок будь-якої складності: орнамент, символіка, напис, логотип. Дизайни майстерні або ваш ескіз.</p></div><div class="sw m-laser"></div></div>
   <div class="cards">
     <article class="card main"><h3>Гравіювання за площею</h3><p>Ціна залежить від площі малюнка. Ескіз погоджуємо до початку робіт.</p><div class="meta"><span>Ціна<b>від 300 ₴/см²</b></span></div></article>
@@ -328,7 +355,7 @@ html{scroll-padding-top:76px}
 
 <!-- РУЧНЕ -->
 <section class="view band" id="v-hand"><div class="wrap">
-  <a class="back" href="#home">← Усі послуги</a>
+  <a class="back" href="#metal">← Робота по металу</a>
   <div class="dhead"><div><h1>Ручне гравіювання</h1><p>Класичне гравіювання штихелем вручну. Кожна робота унікальна.</p></div><div class="sw m-hand"></div></div>
   <div class="cards">
     <article class="card main"><h3>Гравіювання штихелем</h3><p>Ціна залежить від площі та складності. Ескіз погоджуємо до початку робіт.</p><div class="meta"><span>Ціна<b>від 600 ₴/см²</b></span></div></article>
@@ -339,7 +366,7 @@ html{scroll-padding-top:76px}
 
 <!-- ТЮНІНГ -->
 <section class="view band" id="v-tuning"><div class="wrap">
-  <a class="back" href="#home">← Усі послуги</a>
+  <a class="back" href="#home">← На головну</a>
   <div class="dhead"><div><h1>Тюнінг зброї</h1><p>Підбираємо тюнінг під вашу модель, пропонуємо те, що є в наявності, і встановлюємо в майстерні.</p></div><div class="sw m-tune"></div></div>
   <div class="cards">
     <article class="card"><h3>Підбір на ринку</h3><p>Знайдемо деталі та аксесуари під вашу модель і задачі.</p><div class="meta"><span>Ціна<b>за запитом</b></span></div></article>
@@ -355,18 +382,20 @@ html{scroll-padding-top:76px}
 
 <script>
 {
-  const views=['home','oxide','cerakote','gold','laser','hand','tuning'];
-  const anchors=['coatings','metal','tuning-s','order','delivery'];
+  const views=['home','coatings','metal','order','oxide','cerakote','gold','laser','hand','tuning'];
+  const parent={oxide:'coatings',cerakote:'coatings',gold:'coatings',laser:'metal',hand:'metal',tuning:'tuning',coatings:'coatings',metal:'metal',order:'order'};
   const show=()=>{
-    let raw=location.hash.slice(1), h=raw, anchor=null, pre=null;
-    if(raw.startsWith('order-')){pre=raw.slice(6); raw='order';}
-    if(anchors.includes(raw)){anchor=raw==='delivery'?'order':raw; h='home';}
+    let h=location.hash.slice(1), pre=null;
+    if(h.startsWith('order-')){pre=h.slice(6); h='order';}
+    if(h==='delivery')h='order';
     if(!views.includes(h))h='home';
     document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+h));
     if(pre){document.querySelectorAll('#oform input[name=svc]').forEach(c=>{if(c.value===pre)c.checked=true;});}
-    if(anchor){const el=document.getElementById(anchor); requestAnimationFrame(()=>el.scrollIntoView({block:'start'}));}else{window.scrollTo(0,0)}
-    document.querySelectorAll('.tn-links a,.tn-order').forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+(anchor||'')));
-    document.title=(h==='home'?'Майстерня «Січ» — покриття, гравіювання, тюнінг зброї':document.querySelector('#v-'+h+' h1').textContent+' — Січ');
+    window.scrollTo(0,0);
+    const cur=parent[h]||'';
+    document.querySelectorAll('.tn-links a,.tn-order').forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+cur));
+    const t=document.querySelector('#v-'+h+' h1');
+    document.title=(h==='home'?'Майстерня «Січ» — покриття, гравіювання, тюнінг зброї':(t?t.textContent:'')+' — Січ');
   };
   window.addEventListener('hashchange',show);
   show();
