@@ -197,7 +197,7 @@ html{scroll-padding-top:76px}
   <header class="band hero"><div class="wrap">
     <div class="brand">
       <div class="coin" role="img" aria-label="Логотип: Збройова майстерня «Січ»">
-        <div class="coin-in"><img class="face" src="img/logo.webp" alt="" width="480" height="480"><img class="face face-b" src="img/logo-black.webp" alt="" width="480" height="480"></div>
+        <div class="coin-in"><img class="face" src="img/logo.webp" alt="" width="480" height="480"><img class="face face-b" src="img/logo-gold.webp" alt="" width="480" height="480"></div>
       </div>
       <div><h1>Майстерня «Січ»</h1>
       <p class="lead">Покриття, робота по металу та тюнінг зброї. Оберіть, що вас цікавить.</p></div>
@@ -426,7 +426,7 @@ pal.querySelectorAll('.fam').forEach(function(f){var n=0;f.querySelectorAll('.ch
 (function(){
   if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const box=document.querySelector('.coin-in'); if(!box) return;
-  const L=['img/logo.webp','img/logo-black.webp','img/logo-blue.webp','img/logo-white.webp','img/logo-gold.webp'];
+  const L=['img/logo.webp','img/logo-gold.webp','img/logo-silver.webp','img/logo-bronze.webp'];
   L.forEach(u=>{const i=new Image(); i.src=u;});
   const f=box.querySelector('.face:not(.face-b)'), b=box.querySelector('.face-b'); let i=1;
   box.addEventListener('animationiteration',()=>{ f.src=L[i]; i=(i+1)%L.length; b.src=L[i]; });
